@@ -18,7 +18,8 @@ public class AutoTest {
 	public void setUp(){
 		System.setProperty(
 				"webdriver.gecko.driver",
-				"d:/program files/soft/geckodriver.exe");
+				(new java.io.File("").getAbsolutePath()).toString()+
+				"/src/test/resources/geckodriver/geckodriver.exe");
 		this.driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
