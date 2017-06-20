@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29213" started-at="2017-06-20T11:51:23Z" finished-at="2017-06-20T11:51:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29213" started-at="2017-06-20T11:51:23Z" finished-at="2017-06-20T11:51:52Z">
+      <class name="by.tut.tests.SearchTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.tut.tests.SearchTest@4ed9f0]" name="setUp" is-config="true" duration-ms="9213" started-at="2017-06-20T14:51:23Z" finished-at="2017-06-20T14:51:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLoadFirstPage()[pri:0, instance:by.tut.tests.SearchTest@4ed9f0]" name="testLoadFirstPage" duration-ms="2834" started-at="2017-06-20T14:51:32Z" finished-at="2017-06-20T14:51:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoadFirstPage -->
+        <test-method status="PASS" signature="testSearchAmount()[pri:0, instance:by.tut.tests.SearchTest@4ed9f0]" name="testSearchAmount" duration-ms="10345" started-at="2017-06-20T14:51:35Z" depends-on-methods="by.tut.tests.SearchTest.testLoadFirstPage" finished-at="2017-06-20T14:51:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchAmount -->
+        <test-method status="PASS" signature="testSearchLink()[pri:0, instance:by.tut.tests.SearchTest@4ed9f0]" name="testSearchLink" duration-ms="6091" started-at="2017-06-20T14:51:45Z" depends-on-methods="by.tut.tests.SearchTest.testSearchAmount" finished-at="2017-06-20T14:51:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchLink -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.tut.tests.SearchTest@4ed9f0]" name="tearDown" is-config="true" duration-ms="717" started-at="2017-06-20T14:51:51Z" finished-at="2017-06-20T14:51:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- by.tut.tests.SearchTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
