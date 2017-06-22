@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.gmail.tests.AutoTest">
+      <class name="by.tut.tests.SearchTest">
         <methods>
-          <include name="testLoadFirstPage"/>
-          <include name="tearDown"/>
+          <include name="testTutBy"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.gmail.tests.AutoTest -->
+      </class> <!-- by.tut.tests.SearchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
