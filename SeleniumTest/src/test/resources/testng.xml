@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AllTests">
+	<!-- <test name="TestForTutBy">
+		<groups>
+			<run>
+				<include name="tut.by" />
+			</run>
+		</groups>
+		<classes>
+			<class name="by.hancharou.tests.AllTests" />
+		</classes>
+	</test> -->
+	<test name="TestForGmailCom">
+		<groups>
+			<run>
+				<include name="gmail.com" />
+			</run>
+		</groups>
+		<classes>
+			<class name="by.hancharou.tests.AllTests" />
+		</classes>
+	</test>
+</suite>

@@ -1,4 +1,4 @@
-package by.tut.tests;
+package by.hancharou.tests;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,13 +9,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SearchTest {
+public class AllTests {
 	
 	private WebDriver driver;
 	private by.tut.pages.IndexPage tutByIndexPage;
 	private by.tut.pages.SearchPage tutBySearchPage;
+	private com.gmail.pages.IndexPage gmailComIndexPage;
+	private com.gmail.pages.AutoPage gmailAutoPage;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setUp(){
 		System.setProperty(
 				"webdriver.gecko.driver",
@@ -25,19 +27,27 @@ public class SearchTest {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		tutByIndexPage = PageFactory.initElements(driver, by.tut.pages.IndexPage.class);
 		tutBySearchPage = PageFactory.initElements(driver, by.tut.pages.SearchPage.class);
+		gmailComIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
+		gmailAutoPage = PageFactory.initElements(driver, com.gmail.pages.AutoPage.class);
 	}
 	
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void tearDown(){
 		driver.quit();
 	}
 	
-	@Test
+	@Test(groups="tut.by")
 	public void testTutBy(){
 		tutByIndexPage.get();
 		tutBySearchPage.search(by.tut.pages.SearchPage.TEXT_FOR_AMOUNT);
 		tutBySearchPage.testAmount();
 		tutBySearchPage.search(by.tut.pages.SearchPage.TEXT_FOR_LINK);
 		tutBySearchPage.testLink();
+	}
+	
+	@Test(groups="gmail.com")
+	public void testGmailCom(){
+		gmailComIndexPage.get();
+		gmailAutoPage.enterEmail();
 	}
 }
