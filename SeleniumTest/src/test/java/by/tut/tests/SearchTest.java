@@ -15,8 +15,6 @@ import org.testng.annotations.Test;
 public class SearchTest {
 	
 	private WebDriver driver;
-	private String tutSite="http://tut.by/";
-	private String tutTitle = "Белорусский портал TUT.BY";
 	private String tutSearch1 = "automated testing";
 	private String tutSearch2 = "Minsk Automated Testing Community";
 	private int valueAfterSearh = 15;
@@ -36,10 +34,10 @@ public class SearchTest {
 		driver.quit();
 	}
 	
-	@Test
-	public void testLoadFirstPage() {
-		driver.get(tutSite);
-		Assert.assertEquals(driver.getTitle(), tutTitle);
+	@Test(dataProvider="pagesWithTitles", dataProviderClass=by.tut.data.PagesWithTitles.class)
+	public void testLoadFirstPage(String url, String title) {
+		driver.get(url);
+		Assert.assertEquals(driver.getTitle(), title);
 	}
 	
 	@Test(dependsOnMethods="testLoadFirstPage")
@@ -47,7 +45,7 @@ public class SearchTest {
 		performSearch(tutSearch1);
 		int value = driver.findElements(By.cssSelector(".search-i h3")).size();
 		Assert.assertEquals(value, valueAfterSearh);
-		System.out.println(value + " items found during search");
+		System.out.println(value + " links was found during search");
 	}
 	
 	@Test(dependsOnMethods="testSearchAmount")
