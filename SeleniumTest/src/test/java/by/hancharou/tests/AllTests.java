@@ -15,7 +15,7 @@ public class AllTests {
 	private by.tut.pages.IndexPage tutByIndexPage;
 	private by.tut.pages.SearchPage tutBySearchPage;
 	private com.gmail.pages.IndexPage gmailComIndexPage;
-	private com.gmail.pages.AutoPage gmailAutoPage;
+	private com.gmail.pages.EmailPage gmailEmailPage;
 	
 	@BeforeClass(alwaysRun = true)
 	public void setUp(){
@@ -28,7 +28,7 @@ public class AllTests {
 		tutByIndexPage = PageFactory.initElements(driver, by.tut.pages.IndexPage.class);
 		tutBySearchPage = PageFactory.initElements(driver, by.tut.pages.SearchPage.class);
 		gmailComIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
-		gmailAutoPage = PageFactory.initElements(driver, com.gmail.pages.AutoPage.class);
+		gmailEmailPage = PageFactory.initElements(driver, com.gmail.pages.EmailPage.class);
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -44,18 +44,19 @@ public class AllTests {
 	@Test(groups = "tut.by", dataProvider = "dataForAmount", dataProviderClass = by.tut.data.DataForSearch.class)
 	public void testSearchAmount(String strForSearch, int amountAfterSearch){
 		tutBySearchPage.search(strForSearch);
-		tutBySearchPage.testAmount(amountAfterSearch);
+		tutBySearchPage.testAmount(strForSearch, amountAfterSearch);
 	}
 	
 	@Test(groups = "tut.by", dataProvider = "dataForLinks", dataProviderClass = by.tut.data.DataForSearch.class)
 	public void testSearchLinks(String strForSearch, String titleAfterSearch){
 		tutBySearchPage.search(strForSearch);
-		tutBySearchPage.testLink(titleAfterSearch);
+		tutBySearchPage.testLink(strForSearch, titleAfterSearch);
 	}
 	
-	@Test(groups = "gmail.com")
-	public void testGmailCom(){
+	@Test(groups = "gmail.com", dataProvider = "dataForAccounts", dataProviderClass = com.gmail.data.DataForAccounts.class)
+	public void testGmailCom(String email, String password){
 		gmailComIndexPage.get();
-		gmailAutoPage.enterEmail();
+		gmailEmailPage.enterEmail(email);
+		
 	}
 }

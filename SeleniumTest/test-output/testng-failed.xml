@@ -10,9 +10,9 @@
     <classes>
       <class name="by.hancharou.tests.AllTests">
         <methods>
-          <include name="testIndexPage"/>
-          <include name="testSearchLinks" invocation-numbers="0"/>
-          <include name="testSearchAmount" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testSearchLinks" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- by.hancharou.tests.AllTests -->
     </classes>

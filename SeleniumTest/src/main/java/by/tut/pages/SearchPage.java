@@ -11,7 +11,8 @@ import org.testng.Assert;
 
 public class SearchPage {
 	private WebDriver driver;
-	private String PAGE_TITLE="TUT.BY | ПОИСК - Интернет -";
+	private String pageUrl = "http://search.tut.by";
+	private String pageTitle = "TUT.BY | ПОИСК - Интернет -";
 
 	@FindBy(id = "search_from_str") 
 	private WebElement inputSearch;
@@ -22,7 +23,7 @@ public class SearchPage {
 	
 	private void testPageIsSearch(){
 		String title = driver.getTitle();
-		Assert.assertTrue(title.startsWith(PAGE_TITLE));
+		Assert.assertTrue(title.startsWith(pageTitle));
 	}
 	
 	public SearchPage(WebDriver driver){
@@ -36,13 +37,14 @@ public class SearchPage {
 		testPageIsSearch();
 	}
 	
-	public void testAmount(int amountAfterSearch) {
+	public void testAmount(String str, int amountAfterSearch) {
 		int amount = linkList.size();
-		System.out.println(amount + " links was found during search");
+		System.out.println("In your request \"" + str + "\" was found - " + amount + " links!");
 		Assert.assertEquals(amountAfterSearch, amount);
 	}
 
-	public void testLink(String titleAfterSearch) {
+	public void testLink(String strForSearch, String titleAfterSearch) {
+		String currentHandler = driver.getWindowHandle();
 		if(linkList !=null){
 			linkList.get(0).click();
 		}else{
@@ -50,5 +52,7 @@ public class SearchPage {
 		}
 		String title = driver.getTitle();
 		Assert.assertTrue(title.contains(titleAfterSearch));
+		System.out.println("Link on request \"" + strForSearch + "\" is exist!");
+		driver.switchTo().window(currentHandler);
 	}
 }
