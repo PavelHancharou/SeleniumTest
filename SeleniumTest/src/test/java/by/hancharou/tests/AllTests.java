@@ -17,6 +17,7 @@ public class AllTests {
 	private com.gmail.pages.IndexPage gmailIndexPage;
 	private com.gmail.pages.EmailPage gmailEmailPage;
 	private com.gmail.pages.PasswordPage gmailPasswordPage;
+	private com.gmail.pages.ExitPage gmailExitPage;
 	
 	@BeforeClass(alwaysRun = true)
 	public void setUp(){
@@ -31,6 +32,7 @@ public class AllTests {
 		gmailIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
 		gmailEmailPage = PageFactory.initElements(driver, com.gmail.pages.EmailPage.class);
 		gmailPasswordPage = PageFactory.initElements(driver, com.gmail.pages.PasswordPage.class);
+		gmailExitPage = PageFactory.initElements(driver, com.gmail.pages.ExitPage.class);
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -60,5 +62,6 @@ public class AllTests {
 		gmailIndexPage.get();
 		gmailEmailPage.enterEmail(email);
 		gmailPasswordPage.enterPassword(email, password);
+		gmailExitPage.exitMail();
 	}
 }
