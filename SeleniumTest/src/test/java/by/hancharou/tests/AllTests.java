@@ -36,16 +36,24 @@ public class AllTests {
 		driver.quit();
 	}
 	
-	@Test(groups="tut.by")
-	public void testTutBy(){
+	@Test(groups = "tut.by")
+	public void testIndexPage(){
 		tutByIndexPage.get();
-		tutBySearchPage.search(by.tut.pages.SearchPage.TEXT_FOR_AMOUNT);
-		tutBySearchPage.testAmount();
-		tutBySearchPage.search(by.tut.pages.SearchPage.TEXT_FOR_LINK);
-		tutBySearchPage.testLink();
 	}
 	
-	@Test(groups="gmail.com")
+	@Test(groups = "tut.by", dataProvider = "dataForAmount", dataProviderClass = by.tut.data.DataForSearch.class)
+	public void testSearchAmount(String strForSearch, int amountAfterSearch){
+		tutBySearchPage.search(strForSearch);
+		tutBySearchPage.testAmount(amountAfterSearch);
+	}
+	
+	@Test(groups = "tut.by", dataProvider = "dataForLinks", dataProviderClass = by.tut.data.DataForSearch.class)
+	public void testSearchLinks(String strForSearch, String titleAfterSearch){
+		tutBySearchPage.search(strForSearch);
+		tutBySearchPage.testLink(titleAfterSearch);
+	}
+	
+	@Test(groups = "gmail.com")
 	public void testGmailCom(){
 		gmailComIndexPage.get();
 		gmailAutoPage.enterEmail();

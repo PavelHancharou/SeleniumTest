@@ -11,11 +11,7 @@ import org.testng.Assert;
 
 public class SearchPage {
 	private WebDriver driver;
-	public static final String PAGE_URL="http://search.tut.by/";
-	public static final String PAGE_TITLE="TUT.BY | ПОИСК - Интернет -";
-	public static final String TEXT_FOR_AMOUNT="automated testing";
-	private int amountAfterSearch = 15;
-	public static final String TEXT_FOR_LINK="Minsk Automated Testing Community";
+	private String PAGE_TITLE="TUT.BY | ПОИСК - Интернет -";
 
 	@FindBy(id = "search_from_str") 
 	private WebElement inputSearch;
@@ -33,26 +29,26 @@ public class SearchPage {
 		this.driver = driver;
 	}
 
-	public void search(String str) {
+	public void search(String strForSearch) {
 		inputSearch.clear();
-		inputSearch.sendKeys(str);
+		inputSearch.sendKeys(strForSearch);
 		submitSearch.click();
 		testPageIsSearch();
 	}
 	
-	public void testAmount() {
+	public void testAmount(int amountAfterSearch) {
 		int amount = linkList.size();
 		System.out.println(amount + " links was found during search");
 		Assert.assertEquals(amountAfterSearch, amount);
 	}
 
-	public void testLink() {
+	public void testLink(String titleAfterSearch) {
 		if(linkList !=null){
 			linkList.get(0).click();
 		}else{
-			throw new WebDriverException("References - "+ TEXT_FOR_LINK +" - is not found!");
+			throw new WebDriverException("References - "+ titleAfterSearch +" - is not found!");
 		}
 		String title = driver.getTitle();
-		Assert.assertTrue(title.contains(TEXT_FOR_LINK));
+		Assert.assertTrue(title.contains(titleAfterSearch));
 	}
 }
