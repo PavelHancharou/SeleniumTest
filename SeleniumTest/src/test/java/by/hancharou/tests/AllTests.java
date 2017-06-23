@@ -14,8 +14,9 @@ public class AllTests {
 	private WebDriver driver;
 	private by.tut.pages.IndexPage tutByIndexPage;
 	private by.tut.pages.SearchPage tutBySearchPage;
-	private com.gmail.pages.IndexPage gmailComIndexPage;
+	private com.gmail.pages.IndexPage gmailIndexPage;
 	private com.gmail.pages.EmailPage gmailEmailPage;
+	private com.gmail.pages.PasswordPage gmailPasswordPage;
 	
 	@BeforeClass(alwaysRun = true)
 	public void setUp(){
@@ -27,8 +28,9 @@ public class AllTests {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		tutByIndexPage = PageFactory.initElements(driver, by.tut.pages.IndexPage.class);
 		tutBySearchPage = PageFactory.initElements(driver, by.tut.pages.SearchPage.class);
-		gmailComIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
+		gmailIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
 		gmailEmailPage = PageFactory.initElements(driver, com.gmail.pages.EmailPage.class);
+		gmailPasswordPage = PageFactory.initElements(driver, com.gmail.pages.PasswordPage.class);
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -55,8 +57,8 @@ public class AllTests {
 	
 	@Test(groups = "gmail.com", dataProvider = "dataForAccounts", dataProviderClass = com.gmail.data.DataForAccounts.class)
 	public void testGmailCom(String email, String password){
-		gmailComIndexPage.get();
+		gmailIndexPage.get();
 		gmailEmailPage.enterEmail(email);
-		
+		gmailPasswordPage.enterPassword(email, password);
 	}
 }

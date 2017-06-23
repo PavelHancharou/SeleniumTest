@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [AllTests]">
-  <test name="TestForTutBy(failed)">
+  <test name="TestForGmailCom(failed)">
     <groups>
       <run>
-        <include name="tut.by"/>
+        <include name="gmail.com"/>
       </run>
     </groups>
     <classes>
@@ -12,9 +12,9 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testSearchLinks" invocation-numbers="0 1"/>
+          <include name="testGmailCom" invocation-numbers="0"/>
         </methods>
       </class> <!-- by.hancharou.tests.AllTests -->
     </classes>
-  </test> <!-- TestForTutBy(failed) -->
+  </test> <!-- TestForGmailCom(failed) -->
 </suite> <!-- Failed suite [AllTests] -->

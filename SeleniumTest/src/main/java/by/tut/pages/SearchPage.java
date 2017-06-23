@@ -11,7 +11,6 @@ import org.testng.Assert;
 
 public class SearchPage {
 	private WebDriver driver;
-	private String pageUrl = "http://search.tut.by";
 	private String pageTitle = "TUT.BY | ПОИСК - Интернет -";
 
 	@FindBy(id = "search_from_str") 

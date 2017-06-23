@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="by.tut.tests.SearchTest">
+      <class name="by.hancharou.tests.AllTests">
         <methods>
-          <include name="testTutBy"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testSearchLinks" invocation-numbers="0"/>
+          <include name="testSearchAmount" invocation-numbers="0"/>
         </methods>
-      </class> <!-- by.tut.tests.SearchTest -->
+      </class> <!-- by.hancharou.tests.AllTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

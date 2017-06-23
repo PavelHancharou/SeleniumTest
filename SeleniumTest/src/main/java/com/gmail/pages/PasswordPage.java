@@ -8,24 +8,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class EmailPage {
+public class PasswordPage {
 	private WebDriver driver;
-	private String ariaLabelText = "Телефон или адрес электронной почты";
+	private String ariaLabelText = "Введите пароль";
 	
-	@FindBy(id = "identifierId") 
-	private WebElement inputEmail;
+	@FindBy(css = "#password .whsOnd.zHQkBf")
+	private WebElement inputPassword;
 	@FindBy(css = ".RveJvd.snByac")
 	private WebElement buttonNext;
-	
-	public EmailPage(WebDriver driver){
+
+	public PasswordPage(WebDriver driver){
 		this.driver = driver;
 	}
 	
-	public void enterEmail(String email){
-		Assert.assertEquals(ariaLabelText, inputEmail.getAttribute("aria-label"));
-		WebElement expectedText = driver.findElement(By.cssSelector("#headingText"));
-		inputEmail.clear();
-		inputEmail.sendKeys(email);
+	public void enterPassword(String email, String password){
+		Assert.assertEquals(ariaLabelText, inputPassword.getAttribute("aria-label"));
+		WebElement expectedText = driver.findElement(By.cssSelector(".IMH1vc.lUHSR"));
+		inputPassword.clear();
+		inputPassword.sendKeys(password);
 		buttonNext.click();
 		(new WebDriverWait(driver, 10)).until(ExpectedConditions.stalenessOf(expectedText));
 	}
