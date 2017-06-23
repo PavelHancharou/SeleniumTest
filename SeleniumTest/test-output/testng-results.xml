@@ -1,88 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="AllTests" duration-ms="16689" started-at="2017-06-22T13:52:23Z" finished-at="2017-06-22T13:52:40Z">
+  <suite name="AllTests" duration-ms="15696" started-at="2017-06-23T05:30:58Z" finished-at="2017-06-23T05:31:14Z">
     <groups>
       <group name="gmail.com">
-        <method signature="AllTests.testGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@93dd95]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
       </group> <!-- gmail.com -->
     </groups>
-    <test name="TestForGmailCom" duration-ms="16689" started-at="2017-06-22T13:52:23Z" finished-at="2017-06-22T13:52:40Z">
+    <test name="TestForGmailCom" duration-ms="15696" started-at="2017-06-23T05:30:58Z" finished-at="2017-06-23T05:31:14Z">
       <class name="by.hancharou.tests.AllTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@93dd95]" name="setUp" is-config="true" duration-ms="11132" started-at="2017-06-22T16:52:23Z" finished-at="2017-06-22T16:52:34Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="setUp" is-config="true" duration-ms="9840" started-at="2017-06-23T08:30:58Z" finished-at="2017-06-23T08:31:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="testGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@93dd95]" name="testGmailCom" duration-ms="4350" started-at="2017-06-22T16:52:34Z" finished-at="2017-06-22T16:52:38Z">
-          <exception class="org.openqa.selenium.InvalidElementStateException">
-            <message>
-              <![CDATA[Element is not currently interactable and may not be manipulated
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'MRES00', ip: '10.177.139.20', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\User\AppData\Local\Temp\rust_mozprofile.1eFaDJa5Gk90, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=54.0, platformVersion=6.1, moz:processID=4940.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 29562609-1ada-4e5e-b1b5-59f7b4ea5911]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidElementStateException: Element is not currently interactable and may not be manipulated
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'MRES00', ip: '10.177.139.20', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=C:\Users\User\AppData\Local\Temp\rust_mozprofile.1eFaDJa5Gk90, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=54.0, platformVersion=6.1, moz:processID=4940.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
-Session ID: 29562609-1ada-4e5e-b1b5-59f7b4ea5911
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:114)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy7.clear(Unknown Source)
-	at com.gmail.pages.AutoPage.enterEmail(AutoPage.java:22)
-	at by.hancharou.tests.AllTests.testGmailCom(AllTests.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidElementStateException -->
+        <test-method status="PASS" signature="testGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" duration-ms="4986" started-at="2017-06-23T08:31:08Z" finished-at="2017-06-23T08:31:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGmailCom -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@93dd95]" name="tearDown" is-config="true" duration-ms="1184" started-at="2017-06-22T16:52:38Z" finished-at="2017-06-22T16:52:40Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="tearDown" is-config="true" duration-ms="829" started-at="2017-06-23T08:31:13Z" finished-at="2017-06-23T08:31:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
