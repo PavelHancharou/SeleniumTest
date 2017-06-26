@@ -6,12 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
-
-import com.gmail.links.LinkEnam;
 
 public class AllTests {
 	
@@ -35,26 +32,14 @@ public class AllTests {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
-//	@BeforeClass(alwaysRun = true)
-//	public void setUp(){
-//		System.setProperty(
-//				"webdriver.gecko.driver",
-//				(new java.io.File("").getAbsolutePath()).toString()+
-//				"/src/test/resources/geckodriver/geckodriver.exe");
-//		this.driver = new FirefoxDriver();
-//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//		tutByIndexPage = PageFactory.initElements(driver, by.tut.pages.IndexPage.class);
-//		tutBySearchPage = PageFactory.initElements(driver, by.tut.pages.SearchPage.class);
-//		gmailIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
-//		gmailEmailPage = PageFactory.initElements(driver, com.gmail.pages.EmailPage.class);
-//		gmailPasswordPage = PageFactory.initElements(driver, com.gmail.pages.PasswordPage.class);
-//		gmailExitPage = PageFactory.initElements(driver, com.gmail.pages.ExitPage.class);
-//		gmailLinkPage = PageFactory.initElements(driver,com.gmail.links.LinkHandler.class);
-//		//gmailSearchPage = PageFactory.initElements(driver, com.gmail.pages.SearchPage.class);
-//	}
+	@BeforeGroups(groups="tut.by")
+	public void setUpForTutBy(){
+		tutByIndexPage = PageFactory.initElements(driver, by.tut.pages.IndexPage.class);
+		tutBySearchPage = PageFactory.initElements(driver, by.tut.pages.SearchPage.class);
+	}
 	
 	@BeforeGroups(groups="gmail.com")
-	public void setUpForGmail(){
+	public void setUpForGmailCom(){
 		gmailIndexPage = PageFactory.initElements(driver, com.gmail.pages.IndexPage.class);
 		gmailEmailPage = PageFactory.initElements(driver, com.gmail.pages.EmailPage.class);
 		gmailPasswordPage = PageFactory.initElements(driver, com.gmail.pages.PasswordPage.class);
@@ -73,13 +58,13 @@ public class AllTests {
 		tutByIndexPage.get();
 	}
 	
-	@Test(groups = "tut.by", dataProvider = "dataForAmount", dataProviderClass = by.tut.data.DataForSearch.class)
+	@Test(groups = "tut.by", dependsOnMethods = "testIndexPage", dataProvider = "dataForAmount", dataProviderClass = by.tut.data.DataForSearch.class)
 	public void testSearchAmount(String strForSearch, int amountAfterSearch){
 		tutBySearchPage.search(strForSearch);
 		tutBySearchPage.testAmount(strForSearch, amountAfterSearch);
 	}
 	
-	@Test(groups = "tut.by", dataProvider = "dataForLinks", dataProviderClass = by.tut.data.DataForSearch.class)
+	@Test(groups = "tut.by", dependsOnMethods = "testSearchAmount", dataProvider = "dataForLinks", dataProviderClass = by.tut.data.DataForSearch.class)
 	public void testSearchLinks(String strForSearch, String titleAfterSearch){
 		tutBySearchPage.search(strForSearch);
 		tutBySearchPage.testLink(strForSearch, titleAfterSearch);
@@ -100,7 +85,7 @@ public class AllTests {
 //		gmailSearchPage.testSearch(email, link, numLinks);
 //	}
 	
-	@Test(groups = "gmail.com")
+	@Test(groups = "gmail.com", dependsOnMethods = "testGmailCom")
 	public void testExitGmailCom(){
 		gmailExitPage.exitMail();
 	}

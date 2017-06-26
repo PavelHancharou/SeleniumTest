@@ -14,7 +14,7 @@ import com.gmail.links.LinkEnam;
 public class SearchPage {
 	private WebDriver driver;
 	private List<WebElement> linkListFromPage;
-	private WebElement inputSearch;
+	//private WebElement inputSearch;
 
 	public SearchPage(WebDriver driver) {
 		this.driver = driver;
@@ -24,7 +24,7 @@ public class SearchPage {
 		linkListFromPage = driver.findElements(By.cssSelector(".J-Ke.n0"));
 		String expectedTitle = link.getLinkName() + " - " + email + " - Gmail";
 		if (driver.getTitle().equals(expectedTitle)) {
-			inputSearch = driver.findElement(By.id("#gs_taif50"));
+			//inputSearch = driver.findElement(By.id("#gs_taif50"));
 		} else {
 			for (int i = 0; i < linkListFromPage.size(); i++) {
 				if (linkListFromPage.get(i).getText().equals(link.getLinkName())) {
