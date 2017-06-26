@@ -12,7 +12,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testGmailCom" invocation-numbers="0"/>
+          <include name="testExitGmailCom"/>
         </methods>
       </class> <!-- by.hancharou.tests.AllTests -->
     </classes>

@@ -1,20 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="1" ignored="3" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="AllTests" duration-ms="33078" started-at="2017-06-26T07:28:20Z" finished-at="2017-06-26T07:28:53Z">
+  <suite name="AllTests" duration-ms="64528" started-at="2017-06-26T12:20:40Z" finished-at="2017-06-26T12:21:44Z">
     <groups>
       <group name="gmail.com">
-        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testExitGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
       </group> <!-- gmail.com -->
     </groups>
-    <test name="TestForGmailCom" duration-ms="33078" started-at="2017-06-26T07:28:20Z" finished-at="2017-06-26T07:28:53Z">
+    <test name="TestForGmailCom" duration-ms="64528" started-at="2017-06-26T12:20:40Z" finished-at="2017-06-26T12:21:44Z">
       <class name="by.hancharou.tests.AllTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="setUp" is-config="true" duration-ms="10446" started-at="2017-06-26T10:28:20Z" finished-at="2017-06-26T10:28:30Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="setUp" is-config="true" duration-ms="8649" started-at="2017-06-26T15:20:40Z" finished-at="2017-06-26T15:20:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" duration-ms="21150" started-at="2017-06-26T10:28:30Z" data-provider="dataForAccounts" finished-at="2017-06-26T10:28:51Z">
+        <test-method status="PASS" signature="setUpForGmail()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="setUpForGmail" is-config="true" duration-ms="42" started-at="2017-06-26T15:20:48Z" finished-at="2017-06-26T15:20:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpForGmail -->
+        <test-method status="FAIL" signature="testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testExitGmailCom" duration-ms="30048" started-at="2017-06-26T15:20:48Z" finished-at="2017-06-26T15:21:18Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: .gb_8a.gbii
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'MRES00', ip: '10.177.139.20', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\User\AppData\Local\Temp\rust_mozprofile.4qxH0jEV2CG0, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=54.0, platformVersion=6.1, moz:processID=4996.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
+Session ID: 498d9038-787a-4095-b51b-460205b71cb7
+*** Element info: {Using=css selector, value=.gb_8a.gbii}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: .gb_8a.gbii
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'MRES00', ip: '10.177.139.20', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\User\AppData\Local\Temp\rust_mozprofile.4qxH0jEV2CG0, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=54.0, platformVersion=6.1, moz:processID=4996.0, browserName=firefox, javascriptEnabled=true, platformName=windows_nt}]
+Session ID: 498d9038-787a-4095-b51b-460205b71cb7
+*** Element info: {Using=css selector, value=.gb_8a.gbii}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:501)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.click(Unknown Source)
+	at com.gmail.pages.ExitPage.exitMail(ExitPage.java:22)
+	at by.hancharou.tests.AllTests.testExitGmailCom(AllTests.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testExitGmailCom -->
+        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" duration-ms="24866" started-at="2017-06-26T15:21:18Z" data-provider="dataForAccounts" finished-at="2017-06-26T15:21:43Z">
           <params>
             <param index="0">
               <value>
@@ -30,7 +106,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGmailCom -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="tearDown" is-config="true" duration-ms="1461" started-at="2017-06-26T10:28:51Z" finished-at="2017-06-26T10:28:53Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="tearDown" is-config="true" duration-ms="890" started-at="2017-06-26T15:21:43Z" finished-at="2017-06-26T15:21:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

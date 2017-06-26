@@ -1,6 +1,6 @@
-package com.gmail.pages;
+package com.gmail.links;
 
-public enum LinkNames {
+public enum LinkEnam {
 	Inbox("Входящие"),
 	Starred("Помеченные"),
 	Sent("Отправленные"),
@@ -14,7 +14,7 @@ public enum LinkNames {
 	
 	private String linkName;
 	
-	private LinkNames(String name){
+	private LinkEnam(String name){
 		this.linkName = name;
 	}
 

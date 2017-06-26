@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExitPage {
 	private WebDriver driver;
+	private String expectedTitle = "Gmail";
 	
 	@FindBy(css = ".gb_8a.gbii")
 	private WebElement findExitElement;
-	private String expectedTitle = "Gmail";
 	
 	public ExitPage(WebDriver driver){
 		this.driver = driver;
