@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
+import com.gmail.links.LinkEnam;
+
 public class AllTests {
 	
 	private WebDriver driver;
@@ -20,7 +22,7 @@ public class AllTests {
 	private com.gmail.pages.PasswordPage gmailPasswordPage;
 	private com.gmail.links.LinkHandler gmailLinkPage;
 	private com.gmail.pages.ExitPage gmailExitPage;
-	//private com.gmail.pages.SearchPage gmailSearchPage;
+	private com.gmail.pages.SearchPage gmailSearchPage;
 	
 	@BeforeClass(alwaysRun = true)
 	public void setUp(){
@@ -45,7 +47,7 @@ public class AllTests {
 		gmailPasswordPage = PageFactory.initElements(driver, com.gmail.pages.PasswordPage.class);
 		gmailLinkPage = PageFactory.initElements(driver,com.gmail.links.LinkHandler.class);
 		gmailExitPage = PageFactory.initElements(driver, com.gmail.pages.ExitPage.class);
-		//gmailSearchPage = PageFactory.initElements(driver, com.gmail.pages.SearchPage.class);
+		gmailSearchPage = PageFactory.initElements(driver, com.gmail.pages.SearchPage.class);
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -76,16 +78,14 @@ public class AllTests {
 		gmailEmailPage.enterEmail(email);
 		gmailPasswordPage.enterPassword(email, password);
 		gmailLinkPage.testLinks(email);
-		//gmailExitPage.exitMail();
 	}
 
-	// ДОПИСАТЬ!!!!!! ------
-//	@Test(groups = "gmail.com"/*, dataProvider = "dataForAccounts", dataProviderClass = com.gmail.data.DataForAccounts.class*/)
-//	public void testSearch(String email, LinkNames link, int numLinks){
-//		gmailSearchPage.testSearch(email, link, numLinks);
-//	}
+	@Test(groups = "gmail.com", dependsOnMethods = "testGmailCom", dataProvider = "dataForSearch", dataProviderClass = com.gmail.data.DataForSearch.class)
+	public void testSearch(String textForSearch, LinkEnam link, int expectedResult){
+		gmailSearchPage.testSearch(textForSearch, link, expectedResult);
+	}
 	
-	@Test(groups = "gmail.com", dependsOnMethods = "testGmailCom")
+	@Test(groups = "gmail.com", dependsOnMethods = "testSearch")
 	public void testExitGmailCom(){
 		gmailExitPage.exitMail();
 	}

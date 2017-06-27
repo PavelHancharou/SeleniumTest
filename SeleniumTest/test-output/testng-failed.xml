@@ -10,9 +10,11 @@
     <classes>
       <class name="by.hancharou.tests.AllTests">
         <methods>
+          <include name="testSearch" invocation-numbers="0 1"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="testExitGmailCom"/>
+          <include name="testGmailCom"/>
         </methods>
       </class> <!-- by.hancharou.tests.AllTests -->
     </classes>

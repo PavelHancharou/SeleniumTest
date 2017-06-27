@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="5" passed="2">
+<testng-results skipped="0" failed="0" ignored="3" total="7" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="AllTests" duration-ms="38993" started-at="2017-06-26T12:49:14Z" finished-at="2017-06-26T12:49:53Z">
+  <suite name="AllTests" duration-ms="43059" started-at="2017-06-27T12:59:45Z" finished-at="2017-06-27T13:00:28Z">
     <groups>
       <group name="gmail.com">
-        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
-        <method signature="AllTests.testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testExitGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testExitGmailCom" class="by.hancharou.tests.AllTests"/>
       </group> <!-- gmail.com -->
     </groups>
-    <test name="TestForGmailCom" duration-ms="38993" started-at="2017-06-26T12:49:14Z" finished-at="2017-06-26T12:49:53Z">
+    <test name="TestForGmailCom" duration-ms="43059" started-at="2017-06-27T12:59:45Z" finished-at="2017-06-27T13:00:28Z">
       <class name="by.hancharou.tests.AllTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="setUp" is-config="true" duration-ms="10489" started-at="2017-06-26T15:49:14Z" finished-at="2017-06-26T15:49:24Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="setUp" is-config="true" duration-ms="10522" started-at="2017-06-27T15:59:45Z" finished-at="2017-06-27T15:59:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUpForGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="setUpForGmailCom" is-config="true" duration-ms="40" started-at="2017-06-26T15:49:24Z" finished-at="2017-06-26T15:49:24Z">
+        <test-method status="PASS" signature="setUpForGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="setUpForGmailCom" is-config="true" duration-ms="35" started-at="2017-06-27T15:59:56Z" finished-at="2017-06-27T15:59:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpForGmailCom -->
-        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testGmailCom" duration-ms="24230" started-at="2017-06-26T15:49:24Z" data-provider="dataForAccounts" finished-at="2017-06-26T15:49:49Z">
+        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" duration-ms="24268" started-at="2017-06-27T15:59:56Z" data-provider="dataForAccounts" finished-at="2017-06-27T16:00:20Z">
           <params>
             <param index="0">
               <value>
@@ -35,11 +36,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGmailCom -->
-        <test-method status="PASS" signature="testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="testExitGmailCom" duration-ms="3032" started-at="2017-06-26T15:49:49Z" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-26T15:49:52Z">
+        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" duration-ms="2068" started-at="2017-06-27T16:00:20Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-27T16:00:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[a]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Inbox]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearch -->
+        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" duration-ms="2629" started-at="2017-06-27T16:00:22Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-27T16:00:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[I]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Inbox]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearch -->
+        <test-method status="PASS" signature="testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testExitGmailCom" duration-ms="2787" started-at="2017-06-27T16:00:25Z" depends-on-methods="by.hancharou.tests.AllTests.testSearch" finished-at="2017-06-27T16:00:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExitGmailCom -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@83b407]" name="tearDown" is-config="true" duration-ms="1150" started-at="2017-06-26T15:49:52Z" finished-at="2017-06-26T15:49:53Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="tearDown" is-config="true" duration-ms="707" started-at="2017-06-27T16:00:28Z" finished-at="2017-06-27T16:00:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

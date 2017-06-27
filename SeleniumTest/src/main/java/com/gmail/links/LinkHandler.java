@@ -18,7 +18,7 @@ public class LinkHandler {
 		this.driver = driver;
 	}
 
-	private void followLink(LinkEnam link, String email) {
+	public void followLink(LinkEnam link, String email) {
 		linkListFromPage = driver.findElements(By.cssSelector(".J-Ke.n0"));
 		for (int i = 0; i < linkListFromPage.size(); i++) {
 			WebElement openAllLinks = driver.findElement(By.cssSelector(".CJ"));
