@@ -23,6 +23,7 @@ public class AllTests {
 	private com.gmail.links.LinkHandler gmailLinkPage;
 	private com.gmail.pages.ExitPage gmailExitPage;
 	private com.gmail.pages.SearchPage gmailSearchPage;
+	private com.gmail.pages.WriteLetter gmailWriteLetter;
 	
 	@BeforeClass(alwaysRun = true)
 	public void setUp(){
@@ -48,6 +49,7 @@ public class AllTests {
 		gmailLinkPage = PageFactory.initElements(driver,com.gmail.links.LinkHandler.class);
 		gmailExitPage = PageFactory.initElements(driver, com.gmail.pages.ExitPage.class);
 		gmailSearchPage = PageFactory.initElements(driver, com.gmail.pages.SearchPage.class);
+		gmailWriteLetter = PageFactory.initElements(driver, com.gmail.pages.WriteLetter.class);
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -85,7 +87,12 @@ public class AllTests {
 		gmailSearchPage.testSearch(textForSearch, link, expectedResult);
 	}
 	
-	@Test(groups = "gmail.com", dependsOnMethods = "testSearch")
+	@Test(groups = "gmail.com", dependsOnMethods = "testSearch", dataProvider = "dataForSendingLetter", dataProviderClass = com.gmail.data.DataForSendingLetter.class)
+	public void testWriteLetter(String adress, String topic, String text){
+		gmailWriteLetter.send(adress, topic, text);
+	}
+	
+	@Test(groups = "gmail.com", dependsOnMethods = "testWriteLetter")
 	public void testExitGmailCom(){
 		gmailExitPage.exitMail();
 	}

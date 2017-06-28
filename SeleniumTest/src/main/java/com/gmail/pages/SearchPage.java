@@ -62,7 +62,7 @@ public class SearchPage {
 		addToReturnText(notReadedLinkList);
 		System.out.println("The links was found:");
 		for(String str : resultList){
-			System.out.println(str);
+			System.out.println("Form sender - " + str);
 		}
 	}
 }

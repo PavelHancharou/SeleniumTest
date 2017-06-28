@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="7" passed="4">
+<testng-results skipped="0" failed="0" ignored="7" total="15" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="AllTests" duration-ms="43059" started-at="2017-06-27T12:59:45Z" finished-at="2017-06-27T13:00:28Z">
+  <suite name="AllTests" duration-ms="75740" started-at="2017-06-28T13:02:06Z" finished-at="2017-06-28T13:03:22Z">
     <groups>
+      <group name="tut.by">
+        <method signature="AllTests.testIndexPage()[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testIndexPage" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testSearchAmount(java.lang.String, int)[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testSearchAmount" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testSearchLinks(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testSearchLinks" class="by.hancharou.tests.AllTests"/>
+      </group> <!-- tut.by -->
       <group name="gmail.com">
-        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
-        <method signature="AllTests.testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" class="by.hancharou.tests.AllTests"/>
-        <method signature="AllTests.testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testExitGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testGmailCom" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testSearch" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testWriteLetter(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testWriteLetter" class="by.hancharou.tests.AllTests"/>
+        <method signature="AllTests.testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testExitGmailCom" class="by.hancharou.tests.AllTests"/>
       </group> <!-- gmail.com -->
     </groups>
-    <test name="TestForGmailCom" duration-ms="43059" started-at="2017-06-27T12:59:45Z" finished-at="2017-06-27T13:00:28Z">
+    <test name="TestForTutBy" duration-ms="27781" started-at="2017-06-28T13:02:06Z" finished-at="2017-06-28T13:02:34Z">
       <class name="by.hancharou.tests.AllTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="setUp" is-config="true" duration-ms="10522" started-at="2017-06-27T15:59:45Z" finished-at="2017-06-27T15:59:56Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="setUp" is-config="true" duration-ms="10076" started-at="2017-06-28T16:02:06Z" finished-at="2017-06-28T16:02:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUpForGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="setUpForGmailCom" is-config="true" duration-ms="35" started-at="2017-06-27T15:59:56Z" finished-at="2017-06-27T15:59:56Z">
+        <test-method status="PASS" signature="setUpForTutBy()[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="setUpForTutBy" is-config="true" duration-ms="40" started-at="2017-06-28T16:02:16Z" finished-at="2017-06-28T16:02:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpForTutBy -->
+        <test-method status="PASS" signature="testIndexPage()[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testIndexPage" duration-ms="1703" started-at="2017-06-28T16:02:16Z" finished-at="2017-06-28T16:02:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIndexPage -->
+        <test-method status="PASS" signature="testSearchAmount(java.lang.String, int)[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testSearchAmount" duration-ms="10885" started-at="2017-06-28T16:02:18Z" data-provider="dataForAmount" depends-on-methods="by.hancharou.tests.AllTests.testIndexPage" finished-at="2017-06-28T16:02:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[automated testing]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchAmount -->
+        <test-method status="PASS" signature="testSearchLinks(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="testSearchLinks" duration-ms="4277" started-at="2017-06-28T16:02:29Z" data-provider="dataForLinks" depends-on-methods="by.hancharou.tests.AllTests.testSearchAmount" finished-at="2017-06-28T16:02:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Minsk Automated Testing Community]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Minsk Automated Testing Community]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchLinks -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@19c0f4a]" name="tearDown" is-config="true" duration-ms="761" started-at="2017-06-28T16:02:33Z" finished-at="2017-06-28T16:02:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- by.hancharou.tests.AllTests -->
+    </test> <!-- TestForTutBy -->
+    <test name="TestForGmailCom" duration-ms="47943" started-at="2017-06-28T13:02:34Z" finished-at="2017-06-28T13:03:22Z">
+      <class name="by.hancharou.tests.AllTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="setUp" is-config="true" duration-ms="13075" started-at="2017-06-28T16:02:34Z" finished-at="2017-06-28T16:02:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUpForGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="setUpForGmailCom" is-config="true" duration-ms="4" started-at="2017-06-28T16:02:47Z" finished-at="2017-06-28T16:02:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpForGmailCom -->
-        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testGmailCom" duration-ms="24268" started-at="2017-06-27T15:59:56Z" data-provider="dataForAccounts" finished-at="2017-06-27T16:00:20Z">
+        <test-method status="PASS" signature="testGmailCom(java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testGmailCom" duration-ms="23685" started-at="2017-06-28T16:02:47Z" data-provider="dataForAccounts" finished-at="2017-06-28T16:03:10Z">
           <params>
             <param index="0">
               <value>
@@ -36,7 +94,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGmailCom -->
-        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" duration-ms="2068" started-at="2017-06-27T16:00:20Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-27T16:00:22Z">
+        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testSearch" duration-ms="3082" started-at="2017-06-28T16:03:10Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-28T16:03:13Z">
           <params>
             <param index="0">
               <value>
@@ -57,7 +115,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearch -->
-        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testSearch" duration-ms="2629" started-at="2017-06-27T16:00:22Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-27T16:00:25Z">
+        <test-method status="PASS" signature="testSearch(java.lang.String, com.gmail.links.LinkEnam, int)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testSearch" duration-ms="2403" started-at="2017-06-28T16:03:13Z" data-provider="dataForSearch" depends-on-methods="by.hancharou.tests.AllTests.testGmailCom" finished-at="2017-06-28T16:03:16Z">
           <params>
             <param index="0">
               <value>
@@ -78,11 +136,32 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearch -->
-        <test-method status="PASS" signature="testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="testExitGmailCom" duration-ms="2787" started-at="2017-06-27T16:00:25Z" depends-on-methods="by.hancharou.tests.AllTests.testSearch" finished-at="2017-06-27T16:00:28Z">
+        <test-method status="PASS" signature="testWriteLetter(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testWriteLetter" duration-ms="2343" started-at="2017-06-28T16:03:16Z" data-provider="dataForSendingLetter" depends-on-methods="by.hancharou.tests.AllTests.testSearch" finished-at="2017-06-28T16:03:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iwanttomakeatest@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Letter from ME]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Here can be any text]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWriteLetter -->
+        <test-method status="PASS" signature="testExitGmailCom()[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="testExitGmailCom" duration-ms="2717" started-at="2017-06-28T16:03:18Z" depends-on-methods="by.hancharou.tests.AllTests.testWriteLetter" finished-at="2017-06-28T16:03:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExitGmailCom -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@19d1a19]" name="tearDown" is-config="true" duration-ms="707" started-at="2017-06-27T16:00:28Z" finished-at="2017-06-27T16:00:28Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:by.hancharou.tests.AllTests@1ec2012]" name="tearDown" is-config="true" duration-ms="628" started-at="2017-06-28T16:03:21Z" finished-at="2017-06-28T16:03:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
